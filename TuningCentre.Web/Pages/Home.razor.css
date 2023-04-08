@@ -1,0 +1,59 @@
+﻿.row {
+    --bs-gutter-x: 1.5rem;
+    --bs-gutter-y: 0;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: calc(-1 * var(--bs-gutter-y));
+    margin-left: calc(-.5 * var(--bs-gutter-x));
+    color: papayawhip
+   
+}
+
+hr {
+    margin: 5rem auto;
+    color: papayawhip;
+    background-color: currentColor;
+    border: 0;
+    opacity: .25;
+    width: 75%;
+}
+
+h1 {
+    overflow: hidden;
+}
+
+span {
+    position: relative;
+    transform: translateY(100%);
+    transition: .3s;
+    display: inline-block;
+    animation: myAnim 3s ease 0s 1 normal forwards;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+
+
+
+@keyframes myAnim {
+
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+keyframes myAnim {
+    0%
+
+{
+    opacity: 0;
+}
+
+100% {
+    opacity: 1;
+}
+}
