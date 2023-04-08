@@ -1,0 +1,29 @@
+﻿@page "/ProductsByCategory/{CategoryId:int}"
+@inherits ProductsByCategoryBase
+
+@if(Products == null && ErrorMessage == null)
+{
+    <DisplaySpinner/>
+}
+else if(ErrorMessage != null)
+{
+    <DisplayError ErrorMessage = "@ErrorMessage" />
+}
+else
+{
+    <div class="img_2">
+
+        <img src="banner_bmw_side.jpg" width="100%" height="100%">
+
+        </div>
+
+    <h3 style="text-align: center; color: papayawhip;" class="m-3" >@CategoryName </h3>
+   
+    @if(Products.Count() > 0)
+    {
+        <div class = "row mt-3">
+          <DisplayProducts Products = "@Products"></DisplayProducts>
+        </div>
+    }
+
+}

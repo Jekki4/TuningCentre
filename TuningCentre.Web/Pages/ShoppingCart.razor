@@ -1,0 +1,73 @@
+﻿@page "/ShoppingCart"
+@inherits ShoppingCartBase
+
+@if (ShoppingCartItems == null && ErrorMessage == null)
+{
+    <DisplaySpinner></DisplaySpinner>
+}
+else if (ErrorMessage != null)
+{
+    <DisplayError ErrorMessage="@ErrorMessage"></DisplayError>
+}
+else
+{
+    <div class="img_2">
+
+        <img src="porsche_back.jpg" width="100%" height="100%">
+
+    </div>
+
+    <h3 style="text-align: center; color: #fdfdfd" class="m-3">Кошик</h3>
+    @if (ShoppingCartItems.Count() > 0)
+    {
+        <div class="row mb-5">
+            <div class="col-md-9">
+                @foreach (var item in ShoppingCartItems)
+                {
+                    <div class="block">
+                    <div class="row mb-4">
+                        
+                            <div class="col-md-4">
+                                <img style="border-radius: 15px; width: 100%; height: 100%; margin-left: 4%;" src="@item.ProductImageURL" width="300" class="img-thumbnail">
+                            </div>
+                            <div class="col-md-8">
+                                <h5 style="color: papayawhip">@item.ProductName</h5>
+                                <div style="color: #8d949c" class="mb-4">@item.ProductDescription</div>
+                                <span style="color: papayawhip">
+                                    Вартiсть: <b style="color: #85bb65">@item.Price.ToString("C", System.Globalization.CultureInfo.GetCultureInfo("en-us"))</b>
+                                    <input @oninput="()=>UpdateQty_Input(item.Id)"
+                               type="number" @bind="@item.Qty" />
+                                    <button style="background-color: #8d949c; border-color: #101215;" data-itemId="@item.Id" class="btn btn-info btn-sm update-qty"
+                                @onclick="(() => UpdateQtyCartItem_Click(item.Id, item.Qty))">
+                                        Оновити
+                                    </button>
+                                </span>
+                                <div>
+                                    <button @onclick="(() => DeleteCartItem_Click(item.Id))"
+                                class="btn btn-danger sm">
+                                        <i class="fa fa-trash"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+            <div class="col-md-3">
+                <h5 style="color: papayawhip">Всього</h5>
+                <div class="mt-2">
+                    <div style="color: papayawhip" >(@TotalQuantity шт.)&nbsp;<b style="color: #85bb65">@TotalPrice</b></div>
+                    <a href="Checkout" class="btn btn-success">
+                        <span class="oi oi-credit-card"></span>&nbsp; Перейти до сплати
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        
+    }
+    else
+    {
+        <h4 style=" text-align: center; color: papayawhip">На даний момент кошик порожнiй</h4>
+    }
+}

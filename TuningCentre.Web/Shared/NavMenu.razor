@@ -1,0 +1,51 @@
+﻿@implements IDisposable
+@inject IShoppingCartService shoppingCartService
+
+<div class="container-fluid">
+    <div class="logo">
+        
+            <a class="navbar-brand" href="">
+            <img src="RON_LOGO.png" width="100" height="70" />
+            </a>
+       
+    </div>
+    <ProductCategoriesNavMenu />
+    <div class="nav-item">
+        <NavLink class="nav-link" href="ShoppingCart">
+            <span class="fas fa-basket-shopping"></span>&nbsp;(<b>@shoppingCartItemsCount</b>)
+        </NavLink>
+
+    </div>
+    <button title="Navigation menu" class="navbar-toggler" @onclick="ToggleNavMenu">
+        <span class="fas fa-bars"></span>&nbsp;
+    </button>
+</div>
+
+
+@code {
+    private bool collapseNavMenu = true;
+
+    private string? NavMenuCssClass => collapseNavMenu ? "collapse" : null;
+
+    private int shoppingCartItemsCount = 0;
+
+    private void ToggleNavMenu()
+    {
+        collapseNavMenu = !collapseNavMenu;
+    }
+
+    protected override void OnInitialized()
+    {
+        shoppingCartService.OnShoppingCartChanged += ShoppingCartChanged;
+    }
+    private void ShoppingCartChanged(int totalQty)
+    {
+        shoppingCartItemsCount = totalQty;
+        StateHasChanged();
+    }
+    void IDisposable.Dispose()
+    {
+        shoppingCartService.OnShoppingCartChanged -= ShoppingCartChanged;
+    }
+
+}

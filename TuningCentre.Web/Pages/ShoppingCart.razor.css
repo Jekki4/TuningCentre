@@ -1,0 +1,22 @@
+﻿.update-qty{
+    display: none;
+}
+
+
+.btn-info {
+
+    color: #191c20;
+}
+
+.btn-success{
+
+    margin-top: 2%
+}
+
+    .block {
+    border: 2px solid #3d3d3d;
+    border-radius: 20px;
+    margin-bottom: 5px;
+    padding-top: 20px;
+    margin-left: 3%;
+}

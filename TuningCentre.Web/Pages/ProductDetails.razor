@@ -1,0 +1,46 @@
+﻿@page "/ProductDetails/{Id:int}"
+@inherits ProductDetailsBase
+
+@if (Product == null && ErrorMessage == null)
+{
+    <DisplaySpinner/>
+}
+else if (ErrorMessage != null)
+{
+    <DisplayError ErrorMessage="@ErrorMessage"></DisplayError>
+}
+else
+{
+
+    <div class="img_2">
+
+        <img src="banner_bmw_side.jpg" width="100%" height="100%">
+
+    </div>
+
+    <h3 style="text-align: center; color: papayawhip" ; class="m-3">Про деталь</h3>
+    <div class="row">
+        <div class="col-md-6 mb-4">
+            <img style="border-radius: 15px; width: 90%; margin-left: 5%;" class="img-fluid" src="@Product.ImageURL">       
+        </div>
+        <div class="col-md-6">
+            <h3 style="color: papayawhip">@Product.Name</h3>
+            <p style="color: #8d949c" class="mb-4">@Product.Description</p>
+            <p class="mb-4">
+                <b style="color: #85bb65">
+                    @Product.Price.ToString("C", System.Globalization.CultureInfo.GetCultureInfo("en-us"))&nbsp;
+                </b>
+            </p>
+            <div>
+                <button class="btn btn-success"
+                @onclick ="() => (AddToCart_Click(new CartItemToAddDto{
+                    CartId = HardCoded.CartId,
+                    ProductId = Product.Id,
+                    Qty = 1
+                }))"
+                ><b>Додати до кошика</b></button>
+            </div>
+        </div>
+
+    </div>
+}
