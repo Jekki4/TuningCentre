@@ -6,12 +6,12 @@ namespace TuningCentre.Web.Services
 {
     public class ManageCartItemsLocalStorageService : IManageCartItemsLocalStorageService
     {
-        private readonly ILocalStorageService localStorageService;
+        private readonly Blazored.LocalStorage.ILocalStorageService localStorageService;
         private readonly IShoppingCartService shoppingCartService;
 
         const string key = "CartItemCollection";
 
-        public ManageCartItemsLocalStorageService(ILocalStorageService localStorageService,
+        public ManageCartItemsLocalStorageService(Blazored.LocalStorage.ILocalStorageService localStorageService,
                                                   IShoppingCartService shoppingCartService)
         {
             this.localStorageService = localStorageService;

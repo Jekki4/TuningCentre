@@ -6,12 +6,12 @@ namespace TuningCentre.Web.Services
 {
     public class ManageProductsLocalStorageService : IManageProductsLocalStorageService
     {
-        private readonly ILocalStorageService localStorageService;
+        private readonly Blazored.LocalStorage.ILocalStorageService localStorageService;
         private readonly IProductService productService;
 
         private const string key = "ProductCollection";
 
-        public ManageProductsLocalStorageService(ILocalStorageService localStorageService,
+        public ManageProductsLocalStorageService(Blazored.LocalStorage.ILocalStorageService localStorageService,
                                                  IProductService productService)
         {
             this.localStorageService = localStorageService;

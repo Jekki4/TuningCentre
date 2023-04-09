@@ -1,0 +1,8 @@
+﻿.row2 hr {
+    margin: 5rem auto;
+    color: papayawhip;
+    background-color: currentColor;
+    border: 0;
+    opacity: .25;
+    width: 75%;
+}
