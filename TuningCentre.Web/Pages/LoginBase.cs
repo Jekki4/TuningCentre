@@ -18,8 +18,9 @@ namespace TuningCentre.Web.Pages
         protected async Task LoginAsync()
         {
 
-            if (LoginData.UserName == "test" && LoginData.Password == "test" || LoginData.UserName == "Oleg" && LoginData.UserName == "123")
+            if (LoginData.UserName == "test" && LoginData.Password == "test" || LoginData.UserName == "Oleg" && LoginData.Password == "123")
             {
+                
                 var token = new SecurityToken
                 {
                     AccessToken = LoginData.Password,
@@ -43,6 +44,7 @@ namespace TuningCentre.Web.Pages
         public string UserName { get; set; }
         [Required(ErrorMessage = "Поле з паролем повинно бути заповненим!")]
         public string Password { get; set; }
+
     }
     public class SecurityToken 
     {

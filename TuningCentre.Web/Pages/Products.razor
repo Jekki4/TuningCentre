@@ -1,30 +1,65 @@
-﻿@inherits ProductsBase
+﻿@page "/AllProducts"
+@inherits ProductsBase
+@inject TuningCentre.Web.Services.ProductService productService
 
-@if(Products == null && ErrorMessage == null)
+<div class="img_2">
+
+    <img src="/Images/BannerIMG/banner_bmw2.jpg" width="100%" height="100%">
+
+</div>
+
+<h3 style="text-align: center; color: papayawhip; margin-top: 150px; margin-bottom: 100px;">Усi деталi</h3>
+<hr class="featurette-divider">
+
+@if (Products == null && ErrorMessage == null)
 {
-    <DisplaySpinner/>
-
+    <DisplaySpinner />
 }
-else if(ErrorMessage != null)
+else if (ErrorMessage != null)
 {
     <DisplayError ErrorMessage="@ErrorMessage"></DisplayError>
 }
 else
 {
+    <div class="form-group" style="padding-inline: 400px;">
+        <input id="search-input" class="form-control" @bind="@searchTerm" />
+    </div>
+    <p class="d-flex justify-content-center my-4">
+        <button class="btn btn-primary" style="background-color: rgb(141, 148, 156); border-color: rgb(16, 18, 21); color: papyawhip;" @onclick="Search">Шукати</button>
+    </p>
 
+    
 
-    var productCount = Products.Count();
-
-    @if (productCount > 0)
+    @if (Products.Count() > 0)
     {
-        @foreach(var prodGroup in GetGroupedProductsByCategory())
+        <div class="row mt-3 justify-content-lg-start">
+            @if (filteredProducts != null && filteredProducts.Any())
+            {
+                <DisplayProducts Products="@filteredProducts" />
+            }
+            else if (filteredProducts == null)
+            {
+                <DisplayProducts Products="@Products"/>
+            }
+        </div>
+    }
+}
+
+
+@code {
+    private IEnumerable<ProductDto> filteredProducts;
+    private string searchTerm;
+
+    private async Task Search()
+    {
+        if (!string.IsNullOrEmpty(searchTerm))
         {
-            <h4>@GetCategoryName(prodGroup)</h4>
-                    
-            <div class = "row mt-3">
-                <DisplayProducts Products = "@prodGroup.Take(4)"></DisplayProducts>
-            </div>
-            <hr class="mb-3"/>
+            filteredProducts = await productService.GetItems();
+            filteredProducts = filteredProducts.Where(p => p.Name.Contains(searchTerm, StringComparison.InvariantCultureIgnoreCase));
+        }
+        else
+        {
+            filteredProducts = null;
         }
     }
 }

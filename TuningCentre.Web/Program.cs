@@ -20,6 +20,7 @@ builder.Services.AddScoped<IProductService, ProductService>();
 builder.Services.AddScoped<IShoppingCartService, ShoppingCartService>();
 builder.Services.AddScoped<IManageProductsLocalStorageService, ManageProductsLocalStorageService>();
 builder.Services.AddScoped<IManageCartItemsLocalStorageService, ManageCartItemsLocalStorageService>();
+builder.Services.AddScoped<ProductService>();
 
 builder.Services.AddScoped<AuthenticationStateProvider, TokenAuthenticationStateProvider>();
 builder.Services.AddScoped<TuningCentre.Web.Services.Contracts.ILocalStorageService, LocalStorageService>();
@@ -57,7 +58,9 @@ public class TokenAuthenticationStateProvider : AuthenticationStateProvider
         var claims = new List<Claim>()
         {
             new Claim("1", "1"),
-            new Claim("Жека", "1")
+            new Claim("Жека", "1"),
+            new Claim(ClaimTypes.Name,token.UserName)
+
         };
 
 

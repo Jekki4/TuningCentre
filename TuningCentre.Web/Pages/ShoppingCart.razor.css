@@ -5,7 +5,7 @@
 
 .btn-info {
 
-    color: #191c20;
+    color: papayawhip;
 }
 
 .btn-success{
@@ -19,13 +19,4 @@
     margin-bottom: 5px;
     padding-top: 20px;
     margin-left: 3%;
-}
-
-hr {
-    margin: 5rem auto;
-    color: papayawhip;
-    background-color: currentColor;
-    border: 0;
-    opacity: .25;
-    width: 75%;
 }

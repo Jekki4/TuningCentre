@@ -36,8 +36,9 @@ namespace TuningCentre.Web.Services
 
         private async Task<List<CartItemDto>> AddCollection()
         {
-            var shoppingCartCollection = await this.shoppingCartService.GetItems(HardCoded.UserId);
 
+            var shoppingCartCollection = await this.shoppingCartService.GetItems(HardCoded.UserId);
+            
             if(shoppingCartCollection != null)
             {
                 await this.localStorageService.SetItemAsync(key, shoppingCartCollection);

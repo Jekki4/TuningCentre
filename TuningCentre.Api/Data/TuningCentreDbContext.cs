@@ -91,13 +91,21 @@ namespace TuningCentre.Api.Data
             {
                 Id = 1,
                 Name = "Спойлери",
-                IconCSS = "fas fa-champagne-glasses"
             });
             modelBuilder.Entity<ProductCategory>().HasData(new ProductCategory
             {
                 Id = 2,
                 Name = "Капоти",
-                IconCSS = "fas fa-wine-bottle"
+            });
+            modelBuilder.Entity<ProductCategory>().HasData(new ProductCategory
+            {
+                Id = 3,
+                Name = "Капоти",
+            });
+            modelBuilder.Entity<ProductCategory>().HasData(new ProductCategory
+            {
+                Id = 4,
+                Name = "Капоти",
             });
         }
 

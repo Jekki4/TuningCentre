@@ -12,7 +12,6 @@ namespace TuningCentre.Api.Extensions
                     {
                         Id = productCategory.Id,
                         Name = productCategory.Name,
-                        IconCSS = productCategory.IconCSS
                     }).ToList();
         }
         public static IEnumerable<ProductDto> ConvertToDto(this IEnumerable<Product> products)

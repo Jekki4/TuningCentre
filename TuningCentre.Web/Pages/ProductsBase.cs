@@ -9,14 +9,9 @@ namespace TuningCentre.Web.Pages
         [Inject]
         public IProductService ProductService { get; set; }
 
-        [Inject]
-        public IShoppingCartService ShoppingCartService { get; set; }
 
         [Inject]
         public IManageProductsLocalStorageService ManageProductsLocalStorageService { get; set; }
-
-        [Inject]
-        public IManageCartItemsLocalStorageService ManageCartItemsLocalStorageService { get; set; }
 
         public IEnumerable<ProductDto> Products { get; set; }
 
@@ -32,13 +27,6 @@ namespace TuningCentre.Web.Pages
                 await ClearLocalStorage();
 
                 Products = await ManageProductsLocalStorageService.GetCollection();
-
-                var shoppingCartItems = await ManageCartItemsLocalStorageService.GetCollection();
-
-                var totalQty = shoppingCartItems.Sum(i => i.Qty);
-
-                ShoppingCartService.RaiseEventOnShoppingCartChanged(totalQty);
-
             }
             catch (Exception ex)
             {
@@ -63,7 +51,6 @@ namespace TuningCentre.Web.Pages
         private async Task ClearLocalStorage()
         {
             await ManageProductsLocalStorageService.RemoveCollection();
-            await ManageCartItemsLocalStorageService.RemoveCollection();
         }
 
     }

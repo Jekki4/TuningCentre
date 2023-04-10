@@ -8,6 +8,7 @@ header .logo {
 
 .container-fluid {
     display: flex;
+    overflow: hidden;
 }
 
 .top-row {
@@ -28,6 +29,8 @@ header .logo {
 
 .nav-item {
     font-size: 1.5rem;
+    position: relative;
+    
 }
 
     .nav-item ::deep a {
@@ -65,3 +68,13 @@ header .logo {
         overflow-y: auto;
     }
 }
+
+.dropdown-menu {
+
+    z-index: 99999;
+}
+
+.dropdown:hover > .dropdown-menu {
+    display: block;
+    
+} 
