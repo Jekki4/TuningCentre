@@ -43,7 +43,7 @@ namespace TuningCentre.Web.Services
             {
                 await this.localStorageService.SetItemAsync(key, shoppingCartCollection);
             }
-            
+
             return shoppingCartCollection;
 
         }
