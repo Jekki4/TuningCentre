@@ -76,6 +76,6 @@ header .logo {
 
 @media (max-width: 400px) {
     #log_person {
-        margin-left: 120px !important;
+        margin-left: 150px !important;
     }
 }
