@@ -1,11 +1,15 @@
-﻿@page "/"
+﻿@using Microsoft.JSInterop
+@inject IJSRuntime JSRuntime
+@using Microsoft.AspNetCore.Components.Web
+
+@page "/"
 
 <video src="/Images/BannerIMG/video.mp4" autoplay muted loop width="100%" height="100%"> </video>
 
 <div>
-    @*<p style=" display: flex; font-size: 50px; justify-content: center; color: white;margin-top: 200px; margin-bottom: 100px; ">Ronaldo Performance</p>*@
-    <h2><span style=" display: flex; font-size: 50px; justify-content: center; color: white;margin-top: 200px; margin-bottom: 100px; ">Ronaldo Performance</span></h2>
+    <p id="title" style=" display: flex; font-size: 50px; justify-content: center; color: papayawhip;margin-top: 200px; margin-bottom: 100px; ">Ronaldo Performance</p>
 </div>
+
 
 
 <hr class="featurette-divider">
@@ -16,7 +20,7 @@
         <p class="lead" style="text-align: center; color: #8d949c">Комплект VENOM 992 міститить понад 30 унікальних карбонових елементів найвищої якості, зберігаючи при цьому всю функціональність цієї моделі.</p>
     </div>
     <div class="col-md-5">
-        <img style=" border-radius: 7%;" src="/Images/HomeIMG/home_porsche.jpg" width="500" height="500">
+        <img style=" border-radius: 7%;" src="/Images/HomeIMG/home_porsche.jpg" width="100%" height="100%">
     </div>
 </div>
 
@@ -31,7 +35,7 @@
         </p>
     </div>
     <div class="col-md-5 order-md-1">
-        <img style=" border-radius: 7%;" src="/Images/HomeIMG/home_urus.jpg" width="500" height="500">
+        <img style=" border-radius: 7%;" src="/Images/HomeIMG/home_urus.jpg" width="100%" height="100%">
     </div>
 </div>
 

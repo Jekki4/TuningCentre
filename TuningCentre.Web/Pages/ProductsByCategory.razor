@@ -15,7 +15,7 @@ else if(ErrorMessage != null)
 }
 else
 {
-    @if (CategoryId == 2)
+    @*@if (CategoryId == 2)
     {
         
     <div class="img_2">
@@ -31,6 +31,26 @@ else
             <img src="/Images/BannerIMG/banner_cadillac.jpg" width="100%" height="100%">
         </div>
         
+    }*@
+
+    @switch (CategoryId)
+    {
+        case 1:
+            <img src="/Images/BannerIMG/banner_bmw.jpg" width="100%" height="100%">
+            break;
+        case 2:
+            <img src="/Images/BannerIMG/banner_cadillac.jpg" width="100%" height="100%">
+            break;
+        case 3:
+            <img src="/Images/BannerIMG/banner_mercedes2.jpg" width="100%" height="100%">
+            break;
+        case 4:
+            <img src="/Images/BannerIMG/banner_toyota.jpg" width="100%" height="100%">
+            break;
+        case 5:
+            <img src="/Images/BannerIMG/banner_infiniti.jpg" width="100%" height="100%">
+            break;
+
     }
 
     <h3 style="text-align: center; color: papayawhip; margin-top: 150px; margin-bottom: 100px;">@CategoryName </h3>

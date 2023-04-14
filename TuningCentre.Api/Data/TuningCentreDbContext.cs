@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace TuningCentre.Api.Data
 {
-    public class TuningCentreDbContext : DbContext
+    public class TuningCentreDbContext : DbContext //Заповнення бази даних
     {
         public TuningCentreDbContext(DbContextOptions<TuningCentreDbContext> options) : base(options)
         {
@@ -13,8 +13,7 @@ namespace TuningCentre.Api.Data
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
-            //Products
-            //Beauty Category
+
             modelBuilder.Entity<Product>().HasData(new Product
             {
                 Id = 1,

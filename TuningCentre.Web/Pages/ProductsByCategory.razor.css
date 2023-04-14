@@ -1,0 +1,34 @@
+﻿@media (max-width: 1300px) {
+    .form-group {
+        padding-inline: 40px !important;
+    }
+
+    .row {
+        margin-right: -10px;
+    }
+}
+
+@media (max-width: 768px) {
+    .form-group {
+        padding-inline: 20px !important;
+    }
+
+    .row {
+        margin-right: -10px;
+    }
+}
+
+
+@media (max-width: 560px) {
+    .form-group {
+        padding-inline: 20px !important;
+    }
+
+    .row {
+        margin-right: -10px;
+    }
+}
+
+
+
+

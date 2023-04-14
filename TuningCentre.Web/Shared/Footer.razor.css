@@ -3,3 +3,14 @@
     border-top: 2px solid #101215;
     height: 100px;
 }
+
+.row >*{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.col-6 >*{
+    display: flex;
+    justify-content: center;
+}

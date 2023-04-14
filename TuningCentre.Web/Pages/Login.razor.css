@@ -6,3 +6,21 @@
     opacity: .25;
     width: 75%;
 }
+
+
+
+@media (max-width: 1300px) {
+    .log {
+        padding-inline: 100px !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .log {
+        padding-inline: 20px !important;
+    }
+    h3 {
+        font-size: 40px !important;
+    }
+}
+

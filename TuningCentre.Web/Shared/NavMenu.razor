@@ -1,7 +1,7 @@
 ﻿@implements IDisposable
 @inject IShoppingCartService shoppingCartService
 
-<div class="container-fluid">
+<div class="container-fluid d-flex" style="flex-wrap: nowrap">
     <AuthorizeView>
         <Authorized>
                 <div class="logo">
@@ -12,7 +12,7 @@
        
             </div>
 
-            <div class="nav-item" style="position: fixed; top: 12px; margin-left: 10%">
+            <div class="nav-item" style="position: fixed; top: 12px; margin-left: 100px">
                 <div>
                     <ul class="navbar-nav">
                         <li class="nav-item dropdown">
@@ -26,7 +26,7 @@
                 </div>
             </div>
 
-            <div class="nav-item" style="margin-left: 84%;">
+            <div class="nav-item" id="log_person" style="margin-left: 80%;">
                 <NavLink class="nav-link" href="/logout">
                     <span class="fa-solid fa-user" style="color: red;"></span>
                 </NavLink>
@@ -39,9 +39,7 @@
 
             </div>
 
-            <button title="Navigation menu" class="navbar-toggler" @onclick="ToggleNavMenu">
-                <span class="fas fa-bars"></span>&nbsp;
-            </button>
+            
         </Authorized>
         <NotAuthorized>
 
@@ -53,7 +51,7 @@
        
             </div>
 
-            <div class="nav-item" style="position: fixed; top: 12px; margin-left: 10%">
+            <div class="nav-item" style="position: fixed; top: 12px; margin-left: 100px">
                 <div>
                     <ul class="navbar-nav">
                         <li class="nav-item dropdown">
@@ -68,7 +66,7 @@
             </div>
             
 
-            <div class="nav-item" style="margin-left: 84%;">
+            <div class="nav-item" id="log_person" style="margin-left: 80%;">
                 <NavLink class="nav-link" href="/login">
                     <span class="fa-solid fa-user"></span>
                 </NavLink>
@@ -81,26 +79,18 @@
 
             </div>
 
-            <button title="Navigation menu" class="navbar-toggler" @onclick="ToggleNavMenu">
-                <span class="fas fa-bars"></span>&nbsp;
-            </button>
+            
         </NotAuthorized>
 
     </AuthorizeView>
 </div>
 
 
-@code {
-    private bool collapseNavMenu = true;
 
-    private string? NavMenuCssClass => collapseNavMenu ? "collapse" : null;
+
+@code {
 
     private int shoppingCartItemsCount = 0;
-
-    private void ToggleNavMenu()
-    {
-        collapseNavMenu = !collapseNavMenu;
-    }
 
     protected override void OnInitialized()
     {
