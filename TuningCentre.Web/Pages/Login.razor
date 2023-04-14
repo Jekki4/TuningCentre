@@ -9,19 +9,19 @@
 
 <div class="row2" >
     <div class="chin">
-        <h3 style="text-align: center; color: papayawhip; margin-top: 150px; margin-bottom: 100px;">Авторизація</h3>
+        <h3 style="text-align: center; color: papayawhip; margin-top: 150px; margin-bottom: 100px; font-family: 'Exo 2'">Авторизація</h3>
         <hr class="featurette-divider">
         <div class="log" style="padding-inline: 400px;">
 
             <EditForm Model="@LoginData" OnValidSubmit="LoginAsync">
                 <DataAnnotationsValidator/>
                 <ValidationSummary/>
-                <label style="color: papayawhip"; for="username">Ім'я користувача</label>
+                <label style="color: papayawhip; font-family: 'Exo 2'" ; for="username">Ім'я користувача</label>
                 <InputText id="username" @bind-Value="LoginData.UserName" class="form-control"/>
-                <label style="color: papayawhip"; for="password">Пароль</label>
+                <label style="color: papayawhip; font-family: 'Exo 2'" ; for="password">Пароль</label>
                 <InputText id="password" @bind-Value="LoginData.Password" class="form-control" />       
                 <p class="d-flex justify-content-center my-4">
-                    <button type="submit" class="btn btn-primary" style="background-color: rgb(141, 148, 156); border-color: rgb(16, 18, 21); color: papyawhip;">Увійти</button>
+                    <button type="submit" class="btn btn-primary" style="background-color: rgb(141, 148, 156); border-color: rgb(16, 18, 21); color: papyawhip; font-family: 'Exo 2'">Увійти</button>
                 </p>
             </EditForm>
         </div>

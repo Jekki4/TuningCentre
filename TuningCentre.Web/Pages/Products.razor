@@ -8,7 +8,7 @@
 
 </div>
 
-<h3 style="text-align: center; color: papayawhip; margin-top: 150px; margin-bottom: 100px;">Усi деталi</h3>
+<h3 style="text-align: center; color: papayawhip; margin-top: 150px; margin-bottom: 100px; font-family: 'Exo 2'">Усi деталi</h3>
 <hr class="featurette-divider">
 
 @if (Products == null && ErrorMessage == null)
@@ -25,14 +25,14 @@ else
         <input id="search-input" class="form-control" @bind="@searchTerm" />
     </div>
     <p class="d-flex justify-content-center my-4">
-        <button class="btn btn-primary" style="background-color: rgb(141, 148, 156); border-color: rgb(16, 18, 21); color: papyawhip;" @onclick="Search">Шукати</button>
+        <button class="btn btn-primary" style="background-color: rgb(141, 148, 156); border-color: rgb(16, 18, 21); color: papyawhip; font-family: 'Exo 2'" @onclick="Search">Шукати</button>
     </p>
 
     
 
     @if (Products.Count() > 0)
     {
-        <div class="row mt-3 justify-content-lg-start">
+        <div class="row mt-3 justify-content-lg-start" style="font-family: 'Exo 2'">
             @if (filteredProducts != null && filteredProducts.Any())
             {
                 <DisplayProducts Products="@filteredProducts" />
