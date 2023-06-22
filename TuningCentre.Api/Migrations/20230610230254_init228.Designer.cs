@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using TuningCentre.Api.Data;
 
@@ -10,9 +11,11 @@ using TuningCentre.Api.Data;
 namespace TuningCentre.Api.Migrations
 {
     [DbContext(typeof(TuningCentreDbContext))]
-    partial class TuningCentreDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230610230254_init228")]
+    partial class init228
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

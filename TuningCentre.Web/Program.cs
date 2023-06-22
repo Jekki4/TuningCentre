@@ -27,7 +27,6 @@ builder.Services.AddScoped<TuningCentre.Web.Services.Contracts.ILocalStorageServ
 
 builder.Services.AddBlazoredLocalStorage();
 
-
 await builder.Build().RunAsync();
 
 public class TokenAuthenticationStateProvider : AuthenticationStateProvider

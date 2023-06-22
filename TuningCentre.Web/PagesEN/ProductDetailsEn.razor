@@ -1,10 +1,10 @@
-﻿@page "/ProductDetails/{Id:int}"
+﻿@page "/en/ProductDetails/{Id:int}"
 @inherits ProductDetailsEnBase
 
 <header>
 
     <div class="navbar">
-        <NavMenu />
+        <NavMenuEn />
 
     </div>
 
@@ -27,15 +27,15 @@ else
 
     </div>
 
-    <h3 style="text-align: center; color: papayawhip; margin-top: 150px; margin-bottom: 100px; font-family: 'Exo 2'">Про деталь</h3>
+    <h3 style="text-align: center; color: papayawhip; margin-top: 150px; margin-bottom: 100px; font-family: 'Exo 2'">About detail</h3>
     <hr class="featurette-divider">
     <div class="row">
         <div class="col-md-6 mb-4">
             <img style="border-radius: 15px; width: 90%; margin-left: 5%;" class="img-fluid" src="@Product.ImageURL" onclick="showImage(this)" />
         </div>
         <div class="col-md-6">
-            <h3 style="color: papayawhip; font-family: 'Exo 2'">@Product.Name</h3>
-            <p style="color: #8d949c; font-family: 'Exo 2'; font-style: italic; font-weight: 300;" class="mb-4">@Product.Description</p>
+            <h3 style="color: papayawhip; font-family: 'Exo 2'">@Product.NameEN</h3>
+            <p style="color: #8d949c; font-family: 'Exo 2'; font-style: italic; font-weight: 300;" class="mb-4">@Product.DescriptionEN</p>
             <p class="mb-4">
                 <b style="color: #85bb65">
                     @Product.Price.ToString("C", System.Globalization.CultureInfo.GetCultureInfo("en-us"))&nbsp;
@@ -45,8 +45,8 @@ else
                 <NotAuthorized>
                     <div>
                         <button class="btn btn-success">
-                            <NavLink href="/login" style="text-decoration: none;">
-                                <b style="color: papayawhip;">Додати до кошика</b>
+                            <NavLink href="/en/login" style="text-decoration: none;">
+                                <b style="color: papayawhip;">Add to cart</b>
                             </NavLink>
                         </button>
                     </div>
@@ -55,12 +55,12 @@ else
                     
                     <div>
                         <button class="btn btn-success"
-                        @onclick ="() => (AddToCart_Click(new CartItemToAddDto{
+                        @onclick ="() => (AddToCart_ClickEn(new CartItemToAddDto{
                             CartId = HardCoded.CartId,
                             ProductId = Product.Id,
                             Qty = 1
                         }))"
-                        ><b>Додати до кошика</b></button>
+                        ><b>Add to cart</b></button>
                     </div>
                 </Authorized>
             </AuthorizeView>

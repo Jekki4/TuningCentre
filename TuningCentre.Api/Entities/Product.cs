@@ -7,6 +7,8 @@ namespace TuningCentre.Api.Entities
         public int Id { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
+        public string NameEN { get; set; }
+        public string DescriptionEN { get; set; }
         public string ImageURL { get; set; }
         public decimal Price { get; set; }
         

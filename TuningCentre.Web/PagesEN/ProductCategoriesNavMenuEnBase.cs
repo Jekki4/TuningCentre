@@ -2,7 +2,7 @@
 using TuningCentre.Models.Dtos;
 using TuningCentre.Web.Services.Contracts;
 
-namespace TuningCentre.Web.Shared
+namespace TuningCentre.Web.PagesEn
 {
     public class ProductCategoriesNavMenuEnBase:ComponentBase
     {

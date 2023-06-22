@@ -1,4 +1,30 @@
-﻿.row{
+﻿.page {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+    .page header {
+        position: absolute;
+        background-color: transparent;
+    }
+
+header {
+    height: 70px;
+    width: 100%;
+}
+
+.navbar {
+    top: 0;
+    margin: auto;
+    z-index: 999;
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(5px);
+    position: relative;
+}
+
+.row{
     margin-right: none;
 }
 

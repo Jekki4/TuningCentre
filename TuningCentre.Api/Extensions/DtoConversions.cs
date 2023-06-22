@@ -12,6 +12,7 @@ namespace TuningCentre.Api.Extensions
                     {
                         Id = productCategory.Id,
                         Name = productCategory.Name,
+                        NameEN = productCategory.NameEN,
                     }).ToList();
         }
         public static IEnumerable<ProductDto> ConvertToDto(this IEnumerable<Product> products)
@@ -22,10 +23,13 @@ namespace TuningCentre.Api.Extensions
                         Id = product.Id,
                         Name = product.Name,
                         Description = product.Description,
+                        NameEN = product.NameEN,
+                        DescriptionEN = product.DescriptionEN,
                         ImageURL = product.ImageURL,
                         Price = product.Price,
                         CategoryId = product.ProductCategory.Id,
-                        CategoryName = product.ProductCategory.Name
+                        CategoryName = product.ProductCategory.Name,
+                        CategoryNameEN = product.ProductCategory.NameEN
                     }).ToList();
 
         }
@@ -37,10 +41,13 @@ namespace TuningCentre.Api.Extensions
                 Id = product.Id,
                 Name = product.Name,
                 Description = product.Description,
+                NameEN = product.NameEN,
+                DescriptionEN = product.DescriptionEN,
                 ImageURL = product.ImageURL,
                 Price = product.Price,
                 CategoryId = product.ProductCategory.Id,
-                CategoryName = product.ProductCategory.Name
+                CategoryName = product.ProductCategory.Name,
+                CategoryNameEN = product.ProductCategory.NameEN
 
             };
 
@@ -58,6 +65,8 @@ namespace TuningCentre.Api.Extensions
                         ProductId = cartItem.ProductId,
                         ProductName = product.Name,
                         ProductDescription = product.Description,
+                        ProductNameEN = product.NameEN,
+                        ProductDescriptionEN = product.DescriptionEN,
                         ProductImageURL = product.ImageURL,
                         Price = product.Price,
                         CartId = cartItem.CartId,
@@ -74,6 +83,8 @@ namespace TuningCentre.Api.Extensions
                 ProductId = cartItem.ProductId,
                 ProductName = product.Name,
                 ProductDescription = product.Description,
+                ProductNameEN = product.NameEN,
+                ProductDescriptionEN = product.DescriptionEN,
                 ProductImageURL = product.ImageURL,
                 Price = product.Price,
                 CartId = cartItem.CartId,

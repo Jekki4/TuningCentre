@@ -5,12 +5,12 @@
 @foreach (var item in Products)
 {
     <div class="col-md-3 mb-4">
-        <a href="/ProductDetails/@item.Id">
+        <a href="/en/ProductDetails/@item.Id">
             <div class="card">
                 <img class="img-thumbnail" src="@item.ImageURL">
                 <div class="card-body">
                     <h5 class="card-title mb-3">
-                        @item.Name
+                        @item.NameEN
                     </h5>
                     <p class="card-text">
                         <b>@item.Price.ToString("C", System.Globalization.CultureInfo.GetCultureInfo("en-us"))</b>

@@ -1,10 +1,10 @@
-﻿@page "/ShoppingCart"
+﻿@page "/en/ShoppingCart"
 @inherits ShoppingCartBase
 
 <header>
 
     <div class="navbar">
-        <NavMenu />
+        <NavMenuEn />
 
     </div>
 
@@ -26,7 +26,7 @@ else
 
     </div>
 
-    <h3 style="text-align: center; color: papayawhip; margin-top: 150px; margin-bottom: 100px; font-family: 'Exo 2'">Кошик</h3>
+    <h3 style="text-align: center; color: papayawhip; margin-top: 150px; margin-bottom: 100px; font-family: 'Exo 2'">Cart</h3>
     <hr class="featurette-divider">
 
     @if (ShoppingCartItems.Count() > 0)
@@ -42,15 +42,15 @@ else
                                 <img style="border-radius: 15px; width: 100%; height: 100%;" src="@item.ProductImageURL" class="img-thumbnail">
                             </div>
                             <div class="col-md-8">
-                                <h5 style="color: papayawhip; font-family: 'Exo 2'">@item.ProductName</h5>
-                                <div style="color: #8d949c; font-family: 'Exo 2'; font-style: italic; font-weight: 300;" class="mb-4">@item.ProductDescription</div>
+                                <h5 style="color: papayawhip; font-family: 'Exo 2'">@item.ProductNameEN</h5>
+                                <div style="color: #8d949c; font-family: 'Exo 2'; font-style: italic; font-weight: 300;" class="mb-4">@item.ProductDescriptionEN</div>
                                 <span style="color: papayawhip; font-family: 'Exo 2'">
-                                    Вартiсть: <b style="color: #85bb65">@item.Price.ToString("C", System.Globalization.CultureInfo.GetCultureInfo("en-us"))</b>
+                                    Cost: <b style="color: #85bb65">@item.Price.ToString("C", System.Globalization.CultureInfo.GetCultureInfo("en-us"))</b>
                                     <input @oninput="()=>UpdateQty_Input(item.Id)"
                                type="number" @bind="@item.Qty" />
                                     <button style="background-color: #8d949c; border-color: #101215; font-family: 'Exo 2'" data-itemId="@item.Id" class="btn btn-info btn-sm update-qty"
                                 @onclick="(() => UpdateQtyCartItem_Click(item.Id, item.Qty))">
-                                        Оновити
+                                        Update
                                     </button>
                                 </span>
                                 <div>
@@ -65,11 +65,11 @@ else
                 }
             </div>
             <div class="col-md-3">
-                <h5 style="color: papayawhip; font-family: 'Exo 2'">Всього</h5>
+                <h5 style="color: papayawhip; font-family: 'Exo 2'">Total</h5>
                 <div class="mt-2">
-                    <div style="color: papayawhip; font-family: 'Exo 2'">(@TotalQuantity шт.)&nbsp;<b style="color: #85bb65; font-family: 'Exo 2'">@TotalPrice</b></div>
-                    <a href="Checkout" class="btn btn-success">
-                        <span class="oi oi-credit-card"></span>&nbsp; Перейти до сплати
+                    <div style="color: papayawhip; font-family: 'Exo 2'">(@TotalQuantity Qty.)&nbsp;<b style="color: #85bb65; font-family: 'Exo 2'">@TotalPrice</b></div>
+                    <a href="/en/Checkout" class="btn btn-success">
+                        <span class="oi oi-credit-card"></span>&nbsp; Go to payment
                     </a>
                 </div>
             </div>
@@ -79,6 +79,6 @@ else
     }
     else
     {
-        <h4 style=" text-align: center; color: papayawhip; font-family: 'Exo 2'">На даний момент кошик порожнiй</h4>
+        <h4 style=" text-align: center; color: papayawhip; font-family: 'Exo 2'">The cart is currently empty</h4>
     }
 }

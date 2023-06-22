@@ -3,7 +3,7 @@ using Microsoft.JSInterop;
 using TuningCentre.Models.Dtos;
 using TuningCentre.Web.Services.Contracts;
 
-namespace TuningCentre.Web.Pages
+namespace TuningCentre.Web.PagesEn
 {
     public class CheckoutEnBase:ComponentBase
     {

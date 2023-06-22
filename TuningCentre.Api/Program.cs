@@ -3,6 +3,7 @@ using TuningCentre.Api.Repositories.Contracts;
 using TuningCentre.Api.Repositories;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Net.Http.Headers;
+using TuningCentre.Web.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 

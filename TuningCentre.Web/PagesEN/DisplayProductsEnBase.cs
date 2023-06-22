@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Components;
 using TuningCentre.Models.Dtos;
 
-namespace TuningCentre.Web.Pages
+namespace TuningCentre.Web.PagesEn
 {
     public class DisplayProductsEnBase:ComponentBase
     {

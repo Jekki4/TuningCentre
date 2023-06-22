@@ -2,7 +2,7 @@
 using TuningCentre.Web.Services.Contracts;
 using Microsoft.AspNetCore.Components;
 
-namespace TuningCentre.Web.Pages
+namespace TuningCentre.Web.PagesEn
 {
     public class ProductDetailsEnBase:ComponentBase
     {
@@ -64,6 +64,7 @@ namespace TuningCentre.Web.Pages
                 //Log Exception
             }
         }
+
         protected async Task AddToCart_ClickEn(CartItemToAddDto cartItemToAddDto)
         {
             try
